@@ -11,9 +11,9 @@ setup('authenticate', async ({ page }) => {
     const emailInput = page.locator('[placeholder="Ej: ejemplo@gmail.com"]')
     await emailInput.pressSequentially('jrafaelvargasn@gmail.com', { delay: 100 })
 
-    await expect(emailInput).toHaveValue('jrafaelvargasn@gmail.com')
+    await expect(emailInput).toHaveValue('value')
 
-    await page.locator('[placeholder="Ingresa tu contraseña"]').pressSequentially('Lgmd2233.', { delay: 100 })
+    await page.locator('[placeholder="Ingresa tu contraseña"]').pressSequentially('value', { delay: 100 })
     await page.getByRole('button', { name: 'Entrar' }).click()
 
     await expect(page.getByRole('link', {name: 'TOMMY'})).toBeVisible()
